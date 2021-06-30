@@ -1,0 +1,104 @@
+Universe = vanilla
+use_x509userproxy = true
+requirements = TARGET.Machine == "t3.unl.edu"
+should_transfer_files = yes
+when_to_transfer_output = on_exit
+notification = always
+notify_user = gwwilson@ku.edu
+executable = /home/t3-ku/gwwilson/Prospino/prospino_2.run
+output = Prospino_$(process).out
+error = Prospino_$(process).err
+initialdir = Wagner_sleptons_13TeV_Process$(process)
+transfer_input_files = ../infiles/prospino.in.les_houches, ../infiles/cteq6l1.tbl, ../infiles/ctq66.00.pds
+
+#Slepton pair processes
+
+#0
+Arguments = 0 1 ll
+Queue
+
+#1
+Arguments = 1 1 ll
+Queue
+
+#2
+Arguments = 2 1 ll
+Queue
+
+#3
+Arguments = 3 1 ll
+Queue
+
+#4
+Arguments = 4 1 ll
+Queue
+
+#5
+Arguments = 5 1 ll
+Queue
+
+#6
+Arguments = 6 1 ll
+Queue
+
+#7
+Arguments = 7 1 ll
+Queue
+
+#8
+Arguments = 8 1 ll
+Queue
+
+#9
+Arguments = 9 1 ll
+Queue
+
+#10
+Arguments = 10 1 ll
+Queue
+
+#11
+Arguments = 11 1 ll
+Queue
+
+#12
+Arguments = 12 1 ll
+Queue
+
+#13
+Arguments = 13 1 ll
+Queue
+
+#14
+Arguments = 14 1 ll
+Queue
+
+#15
+Arguments = 1 1 tb
+Queue
+
+#16
+Arguments = 1 1 bb
+Queue
+
+#17
+Arguments = 2 1 tb  
+Queue
+
+#18
+Arguments = 2 1 bb
+Queue
+
+#19
+Arguments = 1 1 sg 0
+Queue
+
+#20
+Arguments = 1 1 gg
+Queue
+
+
+
+
+
+
