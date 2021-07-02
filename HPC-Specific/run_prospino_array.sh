@@ -33,7 +33,7 @@ pwd
 SLHAFILE=prospino.in.les_houches
 PDSFILE=ctq66.00.pds
 TBLFILE=cteq6l1.tbl
-ARGSFILE=/home/gwwilson/Prepare_for_Launch/sleptons-electrowakinos_commands.txt
+ARGSFILE=/home/gwwilson/Prepare_for_Launch/sleptons-electroweakinos_commands.txt
 
 if [ ! -e ${SLHAFILE} ]
 then
