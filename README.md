@@ -9,3 +9,5 @@ Keep track of my changes to Prospino 2.1
 3. directory with the CONDOR configs used at Nebraska
 
 4. try with PAT
+
+5. try with credential-helper too
