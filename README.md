@@ -7,3 +7,5 @@ Keep track of my changes to Prospino 2.1
 2. New main program that reads parameters from the command line
 
 3. directory with the CONDOR configs used at Nebraska
+
+4. try with PAT
