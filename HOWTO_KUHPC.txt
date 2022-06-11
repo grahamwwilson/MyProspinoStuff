@@ -1,14 +1,26 @@
 HOWTO run Prospino in batch on KU HPC.
 
+Default job calculates all 51 production processes -- mostly sleptons and electroweakinos.
+
 1. cd $WORK              # (You should now be in /panfs/pfs.local/work/wilson/$USER)
 2. mkdir ProspinoOut     # for job output 
 3. git clone https://github.com/grahamwwilson/MyProspinoStuff.git
 4. mkdir Prospino_Launch # for launch script and job logs
 5. cd Prospino_Launch
 6. cp /panfs/pfs.local/work/wilson/gwwilson/Prospino_Launch/launch.sh .
-7 ./launch.sh
+7 ./launch.sh            # This submits the script (MyProspinoStuff/HPC-Specific/run_prospino_array.sh) to the batch system
+
+# The above uses an executable and some other input files from my Prospino directory that likely 
+# should not normally need to be remade.
 
 You may also want to use collate.sh in /panfs/pfs.local/work/wilson/gwwilson/ProspinoOut 
 to make summary files like Wagner.out and test.out with the calculated cross-sections for all the 
-production modes after the batch job array has completed.
+production modes from the particular SLHA file after the batch job array has completed.
 See ExampleOutput directory with examples of these.
+
+For your own study you likely will need to supply your own SLHA file and change the script 
+to pick it up. Easiest is to put it in the SLHAFiles directory.
+If the jobs start immediately one SLHA file typically takes < 5 minutes 
+to complete the job array.
+
+Graham
