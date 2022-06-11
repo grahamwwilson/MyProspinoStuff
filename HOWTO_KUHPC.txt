@@ -11,4 +11,4 @@ HOWTO run Prospino in batch on KU HPC.
 You may also want to use collate.sh in /panfs/pfs.local/work/wilson/gwwilson/ProspinoOut 
 to make summary files like Wagner.out and test.out with the calculated cross-sections for all the 
 production modes after the batch job array has completed.
-See ExampleOutput directory.
+See ExampleOutput directory with examples of these.
