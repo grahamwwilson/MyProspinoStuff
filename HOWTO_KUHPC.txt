@@ -1,0 +1,14 @@
+HOWTO run Prospino in batch on KU HPC.
+
+1. cd $WORK              # (You should now be in /panfs/pfs.local/work/wilson/$USER)
+2. mkdir ProspinoOut     # for job output 
+3. git clone https://github.com/grahamwwilson/MyProspinoStuff.git
+4. mkdir Prospino_Launch # for launch script and job logs
+5. cd Prospino_Launch
+6. cp /panfs/pfs.local/work/wilson/gwwilson/Prospino_Launch/launch.sh .
+7 ./launch.sh
+
+You may also want to use collate.sh in /panfs/pfs.local/work/wilson/gwwilson/ProspinoOut 
+to make summary files like Wagner.out and test.out with the calculated cross-sections for all the 
+production modes after the batch job array has completed.
+See ExampleOutput directory.
