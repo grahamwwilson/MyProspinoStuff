@@ -8,7 +8,8 @@ Default job calculates all 51 production processes -- mostly sleptons and electr
 4. mkdir Prospino_Launch # for launch script and job logs
 5. cd Prospino_Launch
 6. cp /panfs/pfs.local/work/wilson/gwwilson/Prospino_Launch/launch.sh .
-7 ./launch.sh            # This submits the script (MyProspinoStuff/HPC-Specific/run_prospino_array.sh) to the batch system
+7. Edit the underlying script (run_prospino_array.sh) so that it does not send ME E-mail
+8 ./launch.sh            # This submits the script (MyProspinoStuff/HPC-Specific/run_prospino_array.sh) to the batch system
 
 # The above uses an executable and some other input files from my Prospino directory 
 # that likely should not normally need to be remade.
