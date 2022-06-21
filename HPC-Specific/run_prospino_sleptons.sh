@@ -12,7 +12,7 @@
 #SBATCH --nodes=1 --ntasks=1          # Run on a single CPU
 #SBATCH --mem=1g                      # Job memory request
 #SBATCH --time=0-00:50:00             # Time limit days-hrs:min:sec
-#SBATCH --array=1-51                  # Job array (51 in length)  1-21=sleptons, 22-51=electroweakinos
+#SBATCH --array=1-15                  # Job array (51 in length) 1-15, sleptons, 1-21=sfermions, 22-51=electroweakinos
 #SBATCH --output=prosp-array_%A_%a.log  # Standard output and error log
 #SBATCH --error=prosp-array_%A_%a.err   # Standard output and error log
 
