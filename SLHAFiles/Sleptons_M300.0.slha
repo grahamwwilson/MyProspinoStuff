@@ -67,12 +67,12 @@ Block MASS   # Scalar and gaugino mass spectrum
    1000004     4.99971582E+03   #  chl            
    1000005     4.99961475E+03   #  b1             
    1000006     5.00137744E+03   #  t1             
-   1000011     LLLLLLLLL        #  el-            
-   1000012     NNNNNNNNN        #  nuel           
-   1000013     LLLLLLLLL        #  mul-           
-   1000014     NNNNNNNNN        #  numl           
-   1000015     RRRRRRRRR        #  tau1           
-   1000016     NNNNNNNNN        #  nutl           
+   1000011     300.0E+00        #  el-            
+   1000012     300.0E+00        #  nuel           
+   1000013     300.0E+00        #  mul-           
+   1000014     300.0E+00        #  numl           
+   1000015     300.0E+00        #  tau1           
+   1000016     300.0E+00        #  nutl           
    1000021     2.00000000E+03   #  glss           
    1000022     4.27861916E+01   #  z1ss           
    1000023    -1.57147705E+02   #  z2ss           
@@ -87,9 +87,9 @@ Block MASS   # Scalar and gaugino mass spectrum
    2000004     4.99987256E+03   #  chr            
    2000005     5.00079834E+03   #  b2             
    2000006     5.00168994E+03   #  t2             
-   2000011     RRRRRRRRR        #  er-            
-   2000013     RRRRRRRRR        #  mur-           
-   2000015     LLLLLLLLL        #  tau2           
+   2000011     300.0E+00        #  er-            
+   2000013     300.0E+00        #  mur-           
+   2000015     300.0E+00        #  tau2           
 Block ALPHA   # Effective Higgs mixing parameter
          -6.80194274E-02   # alpha
 Block STOPMIX   # stop mixing matrix

@@ -5,8 +5,8 @@
 #     (Likely not necessary for the slepton cross-section calculations - but 
 #       some programs complain when the LSP is not the lightest neutralino.)
 #  1. Remove decay information as we are overwriting some of the masses.
-#  2. Set all slepton masses to capital rrrrrrrr, nnnnnnnn, llllllll (to be specified later)
-#  3. Stau1/Stau2 mass set to captial rrrrrrrr/llllllll.    
+#  2. Set all slepton masses to capital rrrrrrrrr, rnnnnnnnn, lllllllll (to be specified later)
+#  3. Stau1/Stau2 mass set to captial rrrrrrrrr/lllllllll.    
 #  4. Make stau mixing angle exactly 45 degrees in block STAUMIX --- 
 #     could be inconsistent with masses however.
 #
@@ -67,12 +67,12 @@ Block MASS   # Scalar and gaugino mass spectrum
    1000004     4.99971582E+03   #  chl            
    1000005     4.99961475E+03   #  b1             
    1000006     5.00137744E+03   #  t1             
-   1000011     2.00E+02         #  el-            
-   1000012     2.00E+02         #  nuel           
-   1000013     2.00E+02         #  mul-           
-   1000014     2.00E+02         #  numl           
-   1000015     2.00E+02         #  tau1           
-   1000016     2.00E+02         #  nutl           
+   1000011     200.0E+00        #  el-            
+   1000012     200.0E+00        #  nuel           
+   1000013     200.0E+00        #  mul-           
+   1000014     200.0E+00        #  numl           
+   1000015     200.0E+00        #  tau1           
+   1000016     200.0E+00        #  nutl           
    1000021     2.00000000E+03   #  glss           
    1000022     4.27861916E+01   #  z1ss           
    1000023    -1.57147705E+02   #  z2ss           
@@ -87,9 +87,9 @@ Block MASS   # Scalar and gaugino mass spectrum
    2000004     4.99987256E+03   #  chr            
    2000005     5.00079834E+03   #  b2             
    2000006     5.00168994E+03   #  t2             
-   2000011     2.00E+02         #  er-            
-   2000013     2.00E+02         #  mur-           
-   2000015     2.00E+02         #  tau2           
+   2000011     200.0E+00        #  er-            
+   2000013     200.0E+00        #  mur-           
+   2000015     200.0E+00        #  tau2           
 Block ALPHA   # Effective Higgs mixing parameter
          -6.80194274E-02   # alpha
 Block STOPMIX   # stop mixing matrix
