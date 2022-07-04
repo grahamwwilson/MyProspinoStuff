@@ -10,7 +10,7 @@ NMC1=${MC1}E+00
 NMN1=${MN1}E+00
 echo 'New masses = '${NMN2},${NMC1},${NMN1}
 
-cp higgsino_slha_C1C1.in ${MYFILE}
+cp higgsino_slha_C1C1_V2.in ${MYFILE}
 
 sed -i -e "s/{MN2}/${NMN2}/g" -e "s/{MC1}/${NMC1}/g" -e "s/{MN1}/${NMN1}/g" ${MYFILE}
 
