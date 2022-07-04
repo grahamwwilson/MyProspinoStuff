@@ -31,9 +31,18 @@ Eg.  nn 2 5 is N2 C1+ production.
 Update 04-JUL-2022
 
 Basic jobs now have center-of-mass energy optional argument which can be specified 
-when submitting the scripts (defaults to 13000 GeV if not specified).
+when submitting the scripts (defaults to 13000 GeV if not specified) and also 
+the SLHA optional file argument. 
+See launch.sh, slaunch.sh and hlaunch.sh in my Prospino_Launch directory.
 
-sbatch $WORK/MyProspinoStuff/HPC-Specific/run_prospino_array.sh 13600
-sbatch $WORK/MyProspinoStuff/HPC-Specific/run_prospino_sleptons.sh 14000 
+sbatch $WORK/MyProspinoStuff/HPC-Specific/run_prospino_array.sh 13600 ${SLHA}
+sbatch $WORK/MyProspinoStuff/HPC-Specific/run_prospino_sleptons.sh 14000 ${SLHA}
+sbatch $WORK/MyProspinoStuff/HPC-Specific/run_hino_array.sh 13600 Higgsinos_250.0-235.0-220.0
+
+To make customized SLHA files like Higgsinos_250.0-235.0-220.0.slha in the SLHAFiles directory.
+Run the higgsino.sh script as follows.
+
+./higssino.sh 250.0 235.0 220.0
+
 
 Graham
