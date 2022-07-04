@@ -26,6 +26,14 @@ to complete the job array.
 
 The correspondence to production channel can be deduced from the masses and the 
 conventions in the main program which is in MyProspinoStuff/prospino_main.f90.
-Eg.  nn 2 5 is N2 C1+ production. 
+Eg.  nn 2 5 is N2 C1+ production.
+
+Update 04-JUL-2022
+
+Basic jobs now have center-of-mass energy optional argument which can be specified 
+when submitting the scripts (defaults to 13000 GeV if not specified).
+
+sbatch $WORK/MyProspinoStuff/HPC-Specific/run_prospino_array.sh 13600
+sbatch $WORK/MyProspinoStuff/HPC-Specific/run_prospino_sleptons.sh 14000 
 
 Graham
