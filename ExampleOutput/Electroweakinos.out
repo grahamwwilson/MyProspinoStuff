@@ -1,0 +1,47 @@
+Electroweakino pair cross-sections.
+
+5-7 = C1+ C1-
+1-5 = N1  C1+
+2-5 = N2  C1+
+1-7 = N1  C1-
+2-7 = N2  C1-
+1-1 = N1  N1
+1-2 = N1  N2
+2-2 = N2  N2
+
+Sleptons_M300.0.slha does the NLO calculation OK.
+[gwwilson@submit1 ProspinoOut]$ ./collaten.sh 13000 Sleptons_M300.0
+    i1 i2  dummy0 dummy1 scafac  m1    m2      angle LO[pb]   rel_error NLO[pb]   rel_error   K    LO_ms[pb] NLO_ms[pb]  
+nn  5  7     0.0    0.0    1.0  142.6  142.6  0.000 0.689     0.759E-03 0.889     0.602E-03 1.2898 0.693     0.894    
+nn  1  5     0.0    0.0    1.0   42.8  142.6  0.000  2.46     0.758E-03  3.20     0.597E-03 1.3029  2.50      3.26    
+nn  2  5     0.0    0.0    1.0 -157.1  142.6  0.000 0.607     0.755E-03 0.782     0.600E-03 1.2870 0.609     0.783    
+nn  1  7     0.0    0.0    1.0   42.8  142.6  0.000  1.52     0.784E-03  2.00     0.615E-03 1.3213  1.54      2.04    
+nn  2  7     0.0    0.0    1.0 -157.1  142.6  0.000 0.343     0.787E-03 0.447     0.623E-03 1.3019 0.344     0.448    
+nn  1  2     0.0    0.0    1.0   42.8 -157.1  0.000  1.51     0.759E-03  1.99     0.593E-03 1.3218  1.50      1.99    
+nn  2  2     0.0    0.0    1.0 -157.1 -157.1  0.000 0.220E-03 0.817E-03 0.280E-03 0.661E-03 1.2724 0.220E-03 0.280E-03
+
+But these two calculations based on the Higgsino slha files have errors in the NLO calculation. 
+Suspect some masses are too heavy for the loop calculations.
+Anyway the K-factor (NLO/LO) is likely to be substantial.
+
+[gwwilson@submit1 ProspinoOut]$ ./collaten.sh 13000 Higgsinos_250.0-210.0-170.0
+    i1 i2  dummy0 dummy1 scafac  m1    m2      angle LO[pb]   rel_error NLO[pb]   rel_error   K    LO_ms[pb] NLO_ms[pb]  
+nn  5  7     0.0    0.0    1.0  210.0  210.0  0.000 0.162     0.758E-03       NaN  0.00        NaN 0.163           NaN
+nn  1  5     0.0    0.0    1.0  170.0  210.0  0.000 0.271     0.753E-03       NaN  0.00        NaN 0.271           NaN
+nn  2  5     0.0    0.0    1.0 -250.0  210.0  0.000 0.137     0.752E-03       NaN  0.00        NaN 0.138           NaN
+nn  1  7     0.0    0.0    1.0  170.0  210.0  0.000 0.145     0.788E-03       NaN  0.00        NaN 0.145           NaN
+nn  2  7     0.0    0.0    1.0 -250.0  210.0  0.000 0.699E-01 0.790E-03       NaN  0.00        NaN 0.700E-01       NaN
+nn  1  1     0.0    0.0    1.0  170.0  170.0  0.000  0.00      0.00           NaN  0.00     0.0000  0.00      0.00    
+nn  1  2     0.0    0.0    1.0  170.0 -250.0  0.000 0.152     0.758E-03       NaN  0.00        NaN 0.152           NaN
+nn  2  2     0.0    0.0    1.0 -250.0 -250.0  0.000  0.00      0.00           NaN  0.00     0.0000  0.00      0.00    
+
+[gwwilson@submit1 ProspinoOut]$ ./collaten.sh 13000 Higgsinos_250.0-235.0-220.0
+    i1 i2  dummy0 dummy1 scafac  m1    m2      angle LO[pb]   rel_error NLO[pb]   rel_error   K    LO_ms[pb] NLO_ms[pb]  
+nn  5  7     0.0    0.0    1.0  235.0  235.0  0.000 0.108     0.758E-03       NaN  0.00        NaN 0.108           NaN
+nn  1  5     0.0    0.0    1.0  220.0  235.0  0.000 0.144     0.752E-03       NaN  0.00        NaN 0.144           NaN
+nn  2  5     0.0    0.0    1.0 -250.0  235.0  0.000 0.114     0.752E-03       NaN  0.00        NaN 0.114           NaN
+nn  1  7     0.0    0.0    1.0  220.0  235.0  0.000 0.734E-01 0.790E-03       NaN  0.00        NaN 0.734E-01       NaN
+nn  2  7     0.0    0.0    1.0 -250.0  235.0  0.000 0.572E-01 0.790E-03       NaN  0.00        NaN 0.573E-01       NaN
+nn  1  1     0.0    0.0    1.0  220.0  220.0  0.000  0.00      0.00           NaN  0.00     0.0000  0.00      0.00    
+nn  1  2     0.0    0.0    1.0  220.0 -250.0  0.000 0.102     0.758E-03       NaN  0.00        NaN 0.103           NaN
+nn  2  2     0.0    0.0    1.0 -250.0 -250.0  0.000  0.00      0.00           NaN  0.00     0.0000  0.00      0.00    
