@@ -1,10 +1,17 @@
 program main
+!
+! Update to pass center-of-mass energy as new command line argument
+!
+! New implementation needs at least 3 command line input arguments 
+! and does not assume defaults
+!
   use xx_kinds
   use xx_prospino_subroutine
   implicit none
 
   integer :: num_args, ix
   integer                              :: inlo,isq_ng_in,icoll_in,i_error_in,ipart1_in,ipart2_in,isquark1_in,isquark2_in
+  integer                              :: ienergy_in
   real(kind=double)                    :: energy_in
   logical                              :: lfinal
   character(len=2)                     :: final_state_in
@@ -14,16 +21,20 @@ program main
   num_args = command_argument_count()
   print *,' Number of command line arguments ', num_args
   allocate(args(num_args))
-  final_state_in = 'nn'    ! set default as electroweakino pairs - optional 3rd argument
-  inlo = 1                 ! set default value                   - optional 4th argument
+  ienergy_in = 13000
+  final_state_in = 'nn'    ! set default as electroweakino pairs - optional 4th argument
+  inlo = 1                 ! set default value                   - optional 5th argument
   do ix = 1, num_args
      call get_command_argument(ix,args(ix))
      print *,ix,'  ',args(ix)
-     if(ix.eq.1) read (args(ix), *) ipart1_in        ! syntax for converting from character string to integer
-     if(ix.eq.2) read (args(ix), *) ipart2_in
-     if(ix.eq.3) final_state_in = args(ix)
-     if(ix.eq.4) read (args(ix), *) inlo           
+     if(ix.eq.1) read (args(ix), *) ienergy_in       ! syntax for converting from character string to integer     
+     if(ix.eq.2) read (args(ix), *) ipart1_in        ! syntax for converting from character string to integer
+     if(ix.eq.3) read (args(ix), *) ipart2_in
+     if(ix.eq.4) final_state_in = args(ix)
+     if(ix.eq.5) read (args(ix), *) inlo           
   enddo
+  
+  energy_in = dble(ienergy_in)   ! Collider center-of-mass energy (GeV)
 
 ! Found values are printed below
 
@@ -45,7 +56,7 @@ program main
 
 !----------------------------------------------------------------------------
   icoll_in = 1      ! collider : tevatron[0], lhc[1]                        !
-  energy_in = 13000 ! collider energy in GeV                                !
+!  energy_in = 13000 ! collider energy in GeV  (now passed as argument)     !
 !----------------------------------------------------------------------------
 
 !----------------------------------------------------------------------------
@@ -78,6 +89,7 @@ program main
 !  ipart2_in = 7                                                             !
 !   print *,'Awaiting input '
 !   read(5,*)inlo,ipart1_in,ipart2_in
+   print *,' Read: energy_in       ',energy_in
    print *,' Read: ipart1_in       ',ipart1_in
    print *,' Read: ipart2 in       ',ipart2_in
    print *,' Read: final_state_in  ',final_state_in
