@@ -36,8 +36,8 @@ GITDIR=$WORK/MyProspinoStuff
 # Directory where the executable resides
 EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Prospino
 
-# Here we use ${GITDIR}/SLHAFiles/Wagner.slha as the input SLHA file
-SLHA=Wagner
+# Here we use ${GITDIR}/SLHAFiles/${SLHA}.slha as the input SLHA file
+SLHA=${2:-Higgsinos_250.0-235.0-220.0}
 
 # Directory to run batch job from
 BRDIR=$WORK/ProspinoOut/${SLHA}-${ECM}-Job-${SLURM_ARRAY_TASK_ID}
