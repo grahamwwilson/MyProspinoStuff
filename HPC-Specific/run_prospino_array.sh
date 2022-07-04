@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Run an array of 51 jobs for one particular input SLHA file. 
-# Each job is one of the 51 production channels (21 for sleptons + 30 for electroweakinos)
+# Each job is one of the 51 production channels (21 for sleptons/sfermions + 30 for electroweakinos)
 #
 # Please change E-mail to your own E-mail or turn that feature off!
 #
@@ -15,6 +15,10 @@
 #SBATCH --array=1-51                  # Job array (51 in length)  1-21=sleptons, 22-51=electroweakinos
 #SBATCH --output=prosp-array_%A_%a.log  # Standard output and error log
 #SBATCH --error=prosp-array_%A_%a.err   # Standard output and error log
+
+# Center-of-mass energy (now a command line argument to each job)
+# default value if not specified is 13000 GeV
+ECM=${1:-13000}
 
 pwd
 CWD=$(pwd)
@@ -36,7 +40,7 @@ EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Prospino
 SLHA=Wagner
 
 # Directory to run batch job from
-BRDIR=$WORK/ProspinoOut/${SLHA}-Job-${SLURM_ARRAY_TASK_ID}
+BRDIR=$WORK/ProspinoOut/${SLHA}-${ECM}-Job-${SLURM_ARRAY_TASK_ID}
 
 mkdir ${BRDIR}
 cd ${BRDIR}
@@ -69,7 +73,7 @@ LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p ${ARGSFILE})
 echo "Found Prospino arguments : "
 echo $LINE
 
-${EXEDIR}/prospino_2.run ${LINE}
+${EXEDIR}/prospino_2.run ${ECM} ${LINE}
 
 # Clean up - remove the symbolic links
 rm $SLHAFILE
