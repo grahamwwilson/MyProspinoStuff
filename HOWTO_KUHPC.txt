@@ -41,8 +41,12 @@ sbatch $WORK/MyProspinoStuff/HPC-Specific/run_hino_array.sh 13600 Higgsinos_250.
 
 To make customized SLHA files like Higgsinos_250.0-235.0-220.0.slha in the SLHAFiles directory.
 Run the higgsino.sh script as follows.
+./higgsino.sh 250.0 235.0 220.0
 
-./higssino.sh 250.0 235.0 220.0
+Similarly for sleptons all with the same mass.
+./sleptons.sh 300.0
+leads to Sleptons_M300.0.slha
+
 
 
 Graham
