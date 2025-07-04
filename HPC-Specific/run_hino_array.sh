@@ -17,8 +17,8 @@
 #SBATCH --error=prosp-array_%A_%a.err   # Standard output and error log
 
 # Center-of-mass energy (now a command line argument to each job)
-# default value if not specified is 13000 GeV
-ECM=${1:-13000}
+# default value if not specified is 13600 GeV
+ECM=${1:-13600}
 
 pwd
 CWD=$(pwd)
@@ -30,11 +30,11 @@ echo "SLURM_ARRAY_TASK_ID: "${SLURM_ARRAY_TASK_ID}
 
 # Main directory for the git based code etc.
 # On HPC this should be where you cloned the git repository MyProspinoStuff 
-# You may want to also use your $WORK directory (/panfs/pfs.local/work/wilson/$USER
+# You may want to also use your $WORK directory (/kuhpc/work/wilson/$USER)
 GITDIR=$WORK/MyProspinoStuff
 
 # Directory where the executable resides
-EXEDIR=/panfs/pfs.local/work/wilson/gwwilson/Prospino
+EXEDIR=/kuhpc/work/wilson/gwwilson/Prospino
 
 # Here we use ${GITDIR}/SLHAFiles/${SLHA}.slha as the input SLHA file
 SLHA=${2:-Higgsinos_250.0-235.0-220.0}
