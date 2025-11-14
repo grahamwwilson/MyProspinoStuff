@@ -5,16 +5,16 @@
 #
 # Please change E-mail to your own E-mail or turn that feature off!
 #
-#SBATCH --job-name=prosp-array-job    # Job name
-#SBATCH --partition=sixhour           # Partition Name (Required)
+#SBATCH --job-name=hino-array-job     # Job name
+#SBATCH --partition=bigjay            # Partition Name (Required)
 #SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=gwwilson@ku.edu   # Where to send mail	
 #SBATCH --nodes=1 --ntasks=1          # Run on a single CPU
 #SBATCH --mem=1g                      # Job memory request
 #SBATCH --time=0-00:50:00             # Time limit days-hrs:min:sec
 #SBATCH --array=1-8                   # Job array (8 in length)
-#SBATCH --output=prosp-array_%A_%a.log  # Standard output and error log
-#SBATCH --error=prosp-array_%A_%a.err   # Standard output and error log
+#SBATCH --output=hino-array_%A_%a.log  # Standard output and error log
+#SBATCH --error=hino-array_%A_%a.err   # Standard output and error log
 
 # Center-of-mass energy (now a command line argument to each job)
 # default value if not specified is 13600 GeV
