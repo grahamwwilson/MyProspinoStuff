@@ -1,0 +1,9 @@
+From PMSSM directory of 5TB back-up drive.
+
+This is the correspondence with PMSSM file number.
+
+lrwxrwxrwx 1 1003 1003      12 Aug 20  2018 Higgsino_1.slha -> 6755879.slha
+lrwxrwxrwx 1 1003 1003      13 Aug 20  2018 Higgsino_2.slha -> 10407816.slha
+lrwxrwxrwx 1 1003 1003      14 Aug 20  2018 Bino.slha -> 112647893.slha
+lrwxrwxrwx 1 1003 1003      13 Aug 20  2018 Wino.slha -> 18898934.slha
+
